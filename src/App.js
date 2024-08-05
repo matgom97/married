@@ -1,7 +1,7 @@
 // src/App.js
 import React, { useState } from "react";
 import "./App.css";
-import albaImage from "./foto.JPG"; 
+
 
 const App = () => {
   const [accepted, setAccepted] = useState(false);
