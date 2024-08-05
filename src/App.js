@@ -1,25 +1,60 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React, { useState } from "react";
+import "./App.css";
+import albaImage from "./foto.JPG"; 
 
-function App() {
+const App = () => {
+  const [accepted, setAccepted] = useState(false);
+  const [noButtonPosition, setNoButtonPosition] = useState({
+    top: "50%",
+    left: "50%",
+    position: "",
+  });
+
+  const handleYesClick = () => {
+    setAccepted(true);
+  };
+
+  const handleNoClick = () => {
+    const randomTop = Math.floor(Math.random() * 90) + "%";
+    const randomLeft = Math.floor(Math.random() * 90) + "%";
+    setNoButtonPosition({
+      top: randomTop,
+      left: randomLeft,
+      position: "absolute",
+    });
+  };
+
+  if (accepted) {
+    return (
+      <div className="container">
+        <h1 className="message">wiwiwiwiwiwiwi yo lo sabia wiwiwiwi 🥰🥰🥰🥰🥰🥰</h1>
+        <h2>Los wiwos se casan</h2>
+      </div>
+    );
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="container">
+      <h1>💍 ¿Te quieres casar conmigo? 💍</h1>
+      <div className="buttons">
+        <button className="yes-button" onClick={handleYesClick}>
+          Sí
+        </button>
+        <button
+          className="no-button"
+          onClick={handleNoClick}
+          style={{
+            top: noButtonPosition.top,
+            left: noButtonPosition.left,
+            position: noButtonPosition.position,
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          No
+        </button>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
