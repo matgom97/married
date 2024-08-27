@@ -29,7 +29,12 @@ const App = () => {
     return (
       <div className="container">
         <h1 className="message">wiwiwiwiwiwiwi yo lo sabia wiwiwiwi 🥰🥰🥰🥰🥰🥰</h1>
-        <h2>Los wiwos se casan</h2>
+        <h2>Quiero que sepas que quiero amarte el resto de mi vida, te amo mucho 🥰.
+          Se que no hago muchas cartas ni dibujos, es porque siento que no se me dan bien 
+          pero se que hay algo que si me sale bien y es hacer paginas web, con esto 
+          siento que si puedo dar un detalle que tengas siempre 😁.
+          Cuando quieras solo necesitaras entrar a la pagina y ver lo que te deje.
+        </h2>
       </div>
     );
   }
