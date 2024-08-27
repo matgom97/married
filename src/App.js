@@ -1,6 +1,7 @@
 // src/App.js
 import React, { useState } from "react";
 import "./App.css";
+import image from "./image/imagen.jpeg";
 
 
 const App = () => {
@@ -35,6 +36,7 @@ const App = () => {
           siento que si puedo dar un detalle que tengas siempre 😁.
           Cuando quieras solo necesitaras entrar a la pagina y ver lo que te deje.
         </h2>
+        <img src={image}  style={{ width: '300px', height: '200px' }} ></img>
       </div>
     );
   }
