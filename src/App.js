@@ -84,20 +84,40 @@ Te amo, ahora y siempre. 🌻🍂💛
     <div className="container">
       <h1>💍 ¿Qué respondiste cuando te dije "Te quieres casar conmigo"? 💍</h1>
       <div className="buttons">
-        <button className="yes-button" onClick={handleYesClick}>
-          Sí
-        </button>
-        <button
-          className="no-button"
-          onClick={handleNoClick}
-          style={{
-            top: noButtonPosition.top,
-            left: noButtonPosition.left,
-            position: noButtonPosition.position,
-          }}
-        >
-          No
-        </button>
+      <button
+  onClick={handleYesClick}
+  style={{
+    backgroundColor: "rgb(80, 199, 80)",
+    padding: "10px 30px",
+    borderRadius: "10px",
+    border: "none",
+    boxShadow:
+      "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
+    cursor: "pointer",
+    position: "relative", // Asegura que tenga un contexto de posición
+  }}
+>
+  Sí
+</button>
+
+<button
+  onClick={handleNoClick}
+  style={{
+    backgroundColor: "rgb(241, 77, 77)",
+    padding: "10px 30px",
+    borderRadius: "10px",
+    border: "none",
+    boxShadow:
+      "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
+    cursor: "pointer",
+    position: "absolute",
+    top: noButtonPosition.top,
+    left: noButtonPosition.left,
+    transition: "all 0.2s ease-in-out",
+  }}
+>
+  No
+</button>
       </div>
     </div>
   );

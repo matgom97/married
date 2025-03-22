@@ -1,57 +1,134 @@
-html, body {
+body {
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-body {
+  font-family: Arial, sans-serif;
+  background-color: #fff5e1;
   display: flex;
-  align-items: center;
   justify-content: center;
-  background-color: #fafafa;
-  overflow-y: scroll;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  overflow-x: hidden;
 }
 
 .container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  max-width: 800px;
-  width: 100%;
-  padding: 50px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  position: relative;
-  text-align: center;
+  width: 90%;
+  max-width: 600px; /* Limita el ancho máximo */
+  max-height: 90vh; /* Limita la altura máxima */
+  overflow-y: auto; /* Agrega desplazamiento si es necesario */
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.buttons {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
+/* Mejorar el diseño en pantallas pequeñas */
+@media (max-width: 768px) {
+  .container {
+    max-width: 95%;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  h2 {
+    font-size: 0.85rem;
+  }
+
+  button.yes-button {
+    background-color: rgb(80, 199, 80);
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    cursor: pointer;
+  }
+  
+  button.no-button {
+    background-color: rgb(241, 77, 77);
+    
 }
 
-.yes-button, .no-button {
-  padding: 10px 30px;
-  border-radius: 10px;
-  border: none;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  cursor: pointer;
-  font-size: 16px;
+  .yes-button,
+  .no-button {
+    font-size: 0.9rem;
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    cursor: pointer;
+  }
 }
 
-.yes-button {
-  background-color: rgb(80, 199, 80);
+@media (max-width: 480px) {
+  .container {
+    padding: 8px;
+    max-height: 85vh;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  h2 {
+    font-size: 0.75rem;
+  }
+
+  .yes-button,
+  .no-button {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
 }
 
-.no-button {
-  background-color: rgb(241, 77, 77);
-  position: absolute;
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 }
+
+/* 📌 RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .container {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 0.9rem;
+  }
+
+  .yes-button,
+  .no-button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  h2 {
+    font-size: 0.8rem;
+  }
+
+  .yes-button,
+  .no-button {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+}
+
+
 /* Contenedor de flores */
 .flowers-container {
   position: fixed;
