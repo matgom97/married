@@ -3,6 +3,7 @@ html, body {
   padding: 0;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 body {
@@ -10,6 +11,7 @@ body {
   align-items: center;
   justify-content: center;
   background-color: #fafafa;
+  overflow-y: scroll;
 }
 
 .container {
@@ -23,28 +25,110 @@ body {
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
+  position: relative;
+  text-align: center;
 }
 
-.buttons{
+.buttons {
   display: flex;
   flex-direction: row;
-  gap:20px
+  gap: 20px;
 }
 
-.yes-button{
+.yes-button, .no-button {
+  padding: 10px 30px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.yes-button {
   background-color: rgb(80, 199, 80);
-  padding: 10px 30px 10px 30px;
-  border-radius: 10px;
-  border: none;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  cursor: pointer;
 }
 
-.no-button{
+.no-button {
   background-color: rgb(241, 77, 77);
-  padding: 10px 30px 10px 30px;
-  border-radius: 10px;
-  border: none;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  cursor: pointer;
+  position: absolute;
+}
+/* Contenedor de flores */
+.flowers-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Diseño de la flor */
+.flower {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: yellow;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  animation: float 10s linear infinite;
+}
+
+/* Pétalos adicionales */
+.flower::before,
+.flower::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: yellow;
+  border-radius: 50%;
+}
+
+.flower::before {
+  transform: rotate(45deg);
+}
+
+.flower::after {
+  transform: rotate(-45deg);
+}
+
+/* Más pétalos */
+.flower .petal {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: yellow;
+  border-radius: 50%;
+}
+
+.flower .petal:nth-child(1) { top: -10px; left: 0; }
+.flower .petal:nth-child(2) { top: 10px; left: 0; }
+.flower .petal:nth-child(3) { top: 0; left: -10px; }
+.flower .petal:nth-child(4) { top: 0; left: 10px; }
+
+/* Centro de la flor */
+.flower .center {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: orange;
+  border-radius: 50%;
+  top: 5px;
+  left: 5px;
+}
+
+/* Movimiento de las flores */
+@keyframes float {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
 }
